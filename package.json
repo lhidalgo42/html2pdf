@@ -1,0 +1,17 @@
+{
+  "name": "html2pdf",
+  "version": "1.0.0",
+  "description": "Transform any HTML code with/without CSS in a PDF via WEB",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.12.4",
+    "express": "^4.12.4",
+    "html-pdf": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node index"
+  },
+  "author": "Leonardo Hidalgo",
+  "license": "MIT"
+}
