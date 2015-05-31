@@ -9,7 +9,6 @@
  //var html = fs.readFileSync('example.html', 'utf8');
  // var options = { format: 'A4',orientation: 'portrait' };
  app.post('/', function (sReq, sRes) {
-     console.log(sReq);
      var html = sReq.body.html;
      var options = sReq.body.options;
      var rute = sReq.body.rute;
