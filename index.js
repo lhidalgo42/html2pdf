@@ -4,13 +4,12 @@
  var express = require('express');
  var app = express();
  var bodyParser = require('body-parser');
- app.use( bodyParser.json() );       // to support JSON-encoded bodies
- app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-     extended: true
- }));
+ app.use(bodyParser.json({limit: '150mb'}));
+ app.use(bodyParser.urlencoded({limit: '150mb', extended: true}));
  //var html = fs.readFileSync('example.html', 'utf8');
  // var options = { format: 'A4',orientation: 'portrait' };
  app.post('/', function (sReq, sRes) {
+     console.log(sReq);
      var html = sReq.body.html;
      var options = sReq.body.options;
      var rute = sReq.body.rute;
