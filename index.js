@@ -14,8 +14,8 @@
      var html = sReq.body.html;
      var options = sReq.body.options;
      var rute = sReq.body.rute;
-     
-     pdf.create(html, options).toFile(file,function(err, res) {
+
+     pdf.create(html, options).toFile(function(err, res) {
          if (err) return console.log(err);
          pdf.filename = rute;
          console.log(res); // { filename: '/tmp/html-pdf-8ymPV.pdf' }
@@ -26,7 +26,6 @@
  });
 
  var server = app.listen(3000, function () {
-     var host = server.address().address;
      var port = server.address().port;
-     console.log('Example app listening at http://%s:%s', host, port);
+     console.log('Example app listening at http://0.0.0.0:'+port);
  });
