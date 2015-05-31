@@ -14,14 +14,14 @@
      var html = sReq.body.html;
      var options = sReq.body.options;
      var rute = sReq.body.rute;
+     file = path.join(__dirname, rute);
 
-     pdf.create(html, options).toFile(function(err, res) {
+     pdf.create(html, options).toFile(file,function(err, res) {
          if (err) return console.log(err);
-         pdf.filename = rute;
+         pdf.filename = file;
          console.log(res); // { filename: '/tmp/html-pdf-8ymPV.pdf' }
          sRes.send(res.filename);
      });
-
      //console.log(req)
  });
 
